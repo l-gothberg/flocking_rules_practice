@@ -4,6 +4,24 @@ require 'minitest/pride'
 require_relative '../lib/bottles'
 
 class BottlesTest < Minitest::Test
+  def test_six_pack_with_verse_7
+    skip "Following flocking rules..."
+    expected = "7 bottles of beer on the wall, " +
+      "7 bottles of beer.\n" +
+      "Take one down and pass it around, " +
+      "1 six-pack of beer on the wall.\n"
+    assert_equal expected, Bottles.new.verse(3)
+  end
+
+  def test_six_pack_with_verse_6
+    skip "Following flocking rules..."
+    expected = "1 six-pack of beer on the wall, " +
+      "1 six-pack of beer.\n" +
+      "Take one down and pass it around, " +
+      "5 bottles of beer on the wall.\n"
+    assert_equal expected, Bottles.new.verse(3)
+  end
+
   def test_the_first_verse
     expected = "99 bottles of beer on the wall, " +
       "99 bottles of beer.\n" +
@@ -76,6 +94,7 @@ class BottlesTest < Minitest::Test
   end
 
   def test_the_whole_song
+    skip "Following flocking rules..."
     expected = <<-SONG
 99 bottles of beer on the wall, 99 bottles of beer.
 Take one down and pass it around, 98 bottles of beer on the wall.
@@ -354,9 +373,9 @@ Take one down and pass it around, 8 bottles of beer on the wall.
 Take one down and pass it around, 7 bottles of beer on the wall.
 
 7 bottles of beer on the wall, 7 bottles of beer.
-Take one down and pass it around, 6 bottles of beer on the wall.
+Take one down and pass it around, 1 six-pack of beer on the wall.
 
-6 bottles of beer on the wall, 6 bottles of beer.
+1 six-pack of beer on the wall, 1 six-pack of beer.
 Take one down and pass it around, 5 bottles of beer on the wall.
 
 5 bottles of beer on the wall, 5 bottles of beer.
